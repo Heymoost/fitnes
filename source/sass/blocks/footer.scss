@@ -1,0 +1,139 @@
+footer {
+  background: #030a1a;
+}
+
+.footer__conteiner {
+  max-width: 1160px;
+  margin: 0 auto;
+  box-sizing: content-box;
+
+  @media (min-width: $vp-1200) {
+    padding: 41px 45px;
+  }
+
+  @media (min-width: $vp-768) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 44px 45px;
+  }
+
+  @media (min-width: $vp-320) {
+    display: block;
+    padding: 50px 15px;
+  }
+}
+
+.footer__conteiner-link {
+  color: #ffffff;
+  font-family: "Bebas Neue", "Arial", sans-serif;
+
+  letter-spacing: 0.02em;
+
+  @media (min-width: $vp-1200) {
+    font-size: 26px;
+    line-height: 26px;
+  }
+
+  @media (min-width: $vp-768) {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $vp-320) {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+.footer__conteiner-link:hover {
+  color: #0041ca;
+}
+
+.footer__list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+
+  @media (min-width: $vp-768) {
+    display: flex;
+    padding-bottom: 0;
+    margin-top: 0;
+  }
+
+  @media (min-width: $vp-320) {
+    display: block;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    margin-top: -25px;
+    column-count: 2;
+  }
+}
+
+.footer__item {
+  @media (min-width: $vp-768) {
+    padding-right: 40px;
+    padding-bottom: 0;
+  }
+
+  @media (min-width: $vp-320) {
+    padding-bottom: 20px;
+  }
+}
+
+.footer__item:last-child {
+  padding-right: 0;
+}
+
+.footer__item:first-child {
+  @media (min-width: $vp-768) {
+    padding-top: 0;
+  }
+
+  @media (min-width: $vp-320) {
+    padding-top: 45px;
+  }
+}
+
+.footer__item-link {
+  color: #ffffff;
+
+  @media (min-width: $vp-768) {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  @media (min-width: $vp-320) {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
+.footer__item-link:hover {
+  color: #0041ca;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.social__item {
+  height: 25px;
+  padding-left: 11px;
+}
+
+.social__item:first-child {
+  padding-left: 0;
+}
+
+.social__item-svg {
+  fill: #ffffff;
+}
+
+.social__item-svg:hover {
+  fill: #0041ca;
+}
