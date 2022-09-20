@@ -1,12 +1,14 @@
-import Swiper from 'swiper';
+import Swiper, {Navigation} from 'swiper';
 
 const swiper = new Swiper('.swiper', {
+  modules: [Navigation],
   slidesPerGroup: 1,
   loop: true,
+  allowTouchMove: false,
   loopFillGroupWithBlank: true,
   navigation: {
-    nextEl: '.slider-button-next',
-    prevEl: '.slider-button-prev',
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
   breakpoints: {
     1366: {
@@ -29,13 +31,15 @@ const swiper = new Swiper('.swiper', {
 });
 
 const carousel = new Swiper('.carousel', {
+  modules: [Navigation],
   setWrapperSize: true,
   slidesPerGroup: 1,
   slidesPerView: 1,
+  allowTouchMove: false,
   loop: true,
   loopFillGroupWithBlank: true,
   navigation: {
-    nextEl: '.slider-button-next',
-    prevEl: '.slider-button-prev',
+    nextEl: '.carousel-btn-next',
+    prevEl: '.carousel-btn-prev',
   },
 });

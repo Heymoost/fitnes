@@ -645,7 +645,9 @@ template {
 }
 
 .swiper-button-prev,
-.swiper-button-next {
+.swiper-button-next,
+.carousel-btn-next,
+.carousel-btn-prev {
   position: absolute;
   top: 50%;
   width: calc(var(--swiper-navigation-size) / 44 * 27);
@@ -665,14 +667,22 @@ template {
   color: #afafaf;
 }
 
-.swiper-button-prev.swiper-button-disabled,
-.swiper-button-next.swiper-button-disabled {
+.swiper-button-prev.carousel-btn-prev.swiper-button-disabled,
+.swiper-button-next.carousel-btn-next.swiper-button-disabled {
   opacity: 0.35;
   cursor: auto;
   pointer-events: none;
 }
 
 .swiper-button-prev:after {
+  border-top: 1px solid #afafaf;
+  border-right: 1px solid #afafaf;
+  -webkit-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+.carousel-btn-prev:after {
   border-top: 1px solid #afafaf;
   border-right: 1px solid #afafaf;
   -webkit-transform: rotate(-135deg);
@@ -688,13 +698,31 @@ template {
   transform: rotate(45deg);
 }
 
+.carousel-btn-next:after {
+  border-top: 1px solid #afafaf;
+  border-right: 1px solid #afafaf;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
 .swiper-button-prev:after,
 .swiper-rtl .swiper-button-next:after {
   content: '';
 }
 
+.carousel-btn-prev:after,
+.swiper-rtl .carousel-btn-next:after {
+  content: '';
+}
+
 .swiper-button-next:after,
 .swiper-rtl .swiper-button-prev:after {
+  content: '';
+}
+
+.carousel-btn-next:after,
+.swiper-rtl .carousel-btn-prev:after {
   content: '';
 }
 
@@ -1504,6 +1532,7 @@ button,
 }
 
 .main-nav__conteiner {
+  position: relative;
   max-width: 1160px;
   margin: 0 auto;
   -webkit-box-sizing: content-box;
@@ -1519,7 +1548,13 @@ button,
   justify-content: space-between;
 }
 
-.main-nav__contacts a {
+.main-nav__link {
+  color: #ffffff;
+  font-family: "Bebas Neue", "Arial", sans-serif;
+}
+
+.main-nav__link-tel {
+  letter-spacing: 0.03em;
   color: #ffffff;
   font-family: "Bebas Neue", "Arial", sans-serif;
 }
@@ -1551,18 +1586,13 @@ button,
 }
 
 .main-nav__title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: end;
+  position: relative;
 }
 
 .main-nav__services {
   width: 113px;
-  margin: 0 -34px 0 0;
-  padding: 0 0 27px 0;
+  padding: 0;
+  margin: 0;
   color: #ffffff;
   font-size: 14px;
   line-height: 21px;
@@ -1573,7 +1603,10 @@ h1 {
   margin: 0;
   color: #ffffff;
   font-family: "Bebas Neue", "Arial", sans-serif;
+  -webkit-text-stroke: 2px;
   letter-spacing: 0.03em;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 .main-nav__buy {
@@ -1607,7 +1640,6 @@ h1 {
   -ms-flex-pack: center;
   justify-content: center;
   width: 100%;
-  height: 57px;
   color: #ffffff;
   font-weight: 700;
   font-size: 12px;
@@ -1618,7 +1650,7 @@ h1 {
 
 .main-nav__social {
   position: absolute;
-  bottom: 45px;
+  bottom: 40px;
   right: 0;
 }
 
@@ -1630,7 +1662,7 @@ h1 {
 }
 
 .main-nav__social-item {
-  padding-bottom: 15px;
+  padding-bottom: 7px;
 }
 
 .main-nav__social-item:last-child {
@@ -1749,7 +1781,7 @@ h1 {
 
 .seasons__conteiner-btn {
   font-family: "Roboto Condensed", "Arial", sans-serif;
-  padding: 0 0 20px 0;
+  padding: 0 0 15px 0;
   color: rgba(16, 38, 84, 0.5);
   background: #f8f9fc;
   border: none;
@@ -1763,6 +1795,18 @@ h1 {
 .active-btn {
   color: #102654;
   border-bottom: 2px solid #ff0048;
+}
+
+.seasons__block {
+  display: none;
+}
+
+.seasons__block-nojs {
+  display: block;
+}
+
+.seasons__block-active {
+  display: block;
 }
 
 .seasons__list {
@@ -1792,7 +1836,7 @@ h1 {
 }
 
 .seasons__item p {
-  padding-top: 10px;
+  padding-top: 5px;
   margin: 0;
   color: #495a7d;
   font-weight: 400;
@@ -1816,7 +1860,6 @@ h1 {
 
 .seasons__item-shadow {
   position: absolute;
-  top: 178px;
   left: 50%;
   -webkit-transform: translate(-50%);
   -ms-transform: translate(-50%);
@@ -1838,7 +1881,7 @@ h1 {
   -ms-flex-pack: center;
   justify-content: center;
   height: 64px;
-  margin-top: 30px;
+  margin-top: 35px;
   color: #102654;
   border: 2px solid #102654;
   font-weight: 700;
@@ -1983,6 +2026,7 @@ h1 {
 
 .coaches__item {
   position: relative;
+  max-width: 260px;
 }
 
 .coaches__item h3 {
@@ -2044,7 +2088,7 @@ h1 {
 .coaches__hover-item span {
   color: #ffffff;
   font-size: 14px;
-  line-height: 21px;
+  line-height: 22px;
 }
 
 .coaches__btn-next {
@@ -2056,6 +2100,13 @@ h1 {
   height: 16px;
   z-index: 10;
   cursor: pointer;
+}
+
+.coaches button {
+  width: 35px;
+  padding: 0;
+  border: none;
+  background: #ffffff;
 }
 
 .advantages {
@@ -2095,7 +2146,7 @@ hr {
   position: absolute;
   width: 100%;
   left: 0;
-  bottom: -84px;
+  bottom: -50px;
   border: 1px solid rgba(209, 10, 66, 0.2);
 }
 
@@ -2126,7 +2177,6 @@ hr {
 }
 
 .advantages__item-main {
-  padding: 60px 34px;
   background: #1c3374;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -2178,7 +2228,7 @@ hr {
 }
 
 .stock__main {
-  padding: 45px;
+  padding: 35px 45px 45px 45px;
   background: #ed0233;
 }
 
@@ -2239,6 +2289,10 @@ hr {
   width: 100%;
 }
 
+.stock__img img {
+  height: 100%;
+}
+
 .stock__block {
   width: 100%;
 }
@@ -2251,8 +2305,9 @@ hr {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 211px;
-  padding: 28px;
+  height: auto;
+  min-height: 211px;
+  padding: 20px 28px 28px 28px;
   border: 7px solid;
   -o-border-image: -o-linear-gradient(305deg, #d10a42, #00359f) 1;
   border-image: linear-gradient(145deg, #d10a42, #00359f) 1;
@@ -2292,7 +2347,7 @@ hr {
   color: #1c3374;
   font-style: normal;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 16px;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2353,6 +2408,13 @@ hr {
   font-size: 16px;
 }
 
+.reviews button {
+  width: 35px;
+  padding: 0;
+  border: none;
+  background: #ffffff;
+}
+
 .connection__conteiner {
   max-width: 1160px;
   margin: 0 auto;
@@ -2363,7 +2425,7 @@ hr {
 .connection h2 {
   margin: 0;
   font-family: "Bebas Neue", "Arial", sans-serif;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
 }
 
 .connection__form {
@@ -2376,7 +2438,7 @@ hr {
 
 .connection__input input {
   width: 100%;
-  padding: 10px 0;
+  padding: 0 0 5px 0;
   margin: 0;
   color: #ffffff;
   background: #102654;
@@ -2388,31 +2450,31 @@ hr {
 
 .connection ::-webkit-input-placeholder {
   color: #ffffff;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
 }
 
 .connection ::-moz-placeholder {
   color: #ffffff;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
 }
 
 .connection :-ms-input-placeholder {
   color: #ffffff;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
 }
 
 .connection ::-ms-input-placeholder {
   color: #ffffff;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
 }
 
 .connection ::placeholder {
   color: #ffffff;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 22px;
 }
 
@@ -2440,7 +2502,7 @@ hr {
 }
 
 .connection__contacts h2 {
-  padding-bottom: 40px;
+  padding-bottom: 25px;
   color: #102654;
 }
 
@@ -2479,6 +2541,18 @@ hr {
   line-height: 21px;
 }
 
+.connection__item-link {
+  margin: 0;
+  color: #102654;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.connection__item-link:hover {
+  color: #0041ca;
+}
+
 footer {
   background: #030a1a;
 }
@@ -2491,6 +2565,7 @@ footer {
 }
 
 .footer__conteiner-link {
+  margin-right: 15px;
   color: #ffffff;
   font-family: "Bebas Neue", "Arial", sans-serif;
   letter-spacing: 0.02em;
@@ -2522,17 +2597,19 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   padding: 0;
-  margin: 0;
   list-style-type: none;
 }
 
 .social__item {
   height: 25px;
-  padding-left: 11px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .social__item:first-child {
@@ -2553,7 +2630,17 @@ footer {
     height: 16px;
   }
 
+  .carousel-btn-prev:after {
+    width: 16px;
+    height: 16px;
+  }
+
   .swiper-button-next:after {
+    width: 16px;
+    height: 16px;
+  }
+
+  .carousel-btn-next:after {
     width: 16px;
     height: 16px;
   }
@@ -2584,10 +2671,20 @@ footer {
     padding: 20px 15px 80px 15px;
   }
 
-  .main-nav__contacts a {
+  .main-nav__link {
     font-size: 20px;
     line-height: 20px;
     letter-spacing: 0.02em;
+  }
+
+  .main-nav__contacts-tel {
+    display: block;
+    max-width: 120px;
+  }
+
+  .main-nav__link-tel {
+    font-size: 20px;
+    line-height: 20px;
   }
 
   .main-nav__block {
@@ -2610,12 +2707,15 @@ footer {
   }
 
   .main-nav__title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     padding-bottom: 72px;
   }
 
   .main-nav__services {
-    margin: 0 -34px 0 0;
-    padding: 0 0 11px 0;
+    margin-right: -34px;
+    margin-top: 82px;
   }
 
   h1 {
@@ -2639,6 +2739,7 @@ footer {
   }
 
   .hall__text {
+    text-align: start;
     padding: 0 15px 40px 15px;
   }
 
@@ -2780,9 +2881,6 @@ footer {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -2848,8 +2946,8 @@ footer {
     line-height: 32px;
   }
 
-  .coaches__item:hover h3 {
-    display: block;
+  .coaches__item-active h3 {
+    display: none;
   }
 
   .coaches__item img {
@@ -2903,6 +3001,7 @@ footer {
 
   .advantages__item-main {
     margin-bottom: 50px;
+    padding: 42px 34px;
   }
 
   .advantages__item-main h4 {
@@ -2930,7 +3029,7 @@ footer {
   }
 
   .stock__main p {
-    padding-top: 16px;
+    padding-top: 25px;
     padding-bottom: 16px;
   }
 
@@ -3058,6 +3157,18 @@ footer {
     font-size: 16px;
     line-height: 19px;
   }
+
+  .social {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: start;
+    margin: 0;
+  }
+
+  .social__item {
+    padding-left: 0;
+    padding-right: 11px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -3066,7 +3177,17 @@ footer {
     height: 20px;
   }
 
+  .carousel-btn-prev:after {
+    width: 20px;
+    height: 20px;
+  }
+
   .swiper-button-next:after {
+    width: 20px;
+    height: 20px;
+  }
+
+  .carousel-btn-next:after {
     width: 20px;
     height: 20px;
   }
@@ -3097,10 +3218,27 @@ footer {
     padding: 40px 45px 82px 45px;
   }
 
-  .main-nav__contacts a {
+  .main-nav__link {
     font-size: 24px;
     line-height: 24px;
     letter-spacing: 0.02em;
+  }
+
+  .main-nav__contacts-tel {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    max-width: 324px;
+  }
+
+  .main-nav__link-tel {
+    font-size: 24px;
+    line-height: 24px;
   }
 
   .main-nav__block {
@@ -3118,7 +3256,7 @@ footer {
 
   .main-nav__text {
     padding-top: 0;
-    padding-right: 30px;
+    padding-right: 37px;
   }
 
   .main-nav__text span {
@@ -3126,9 +3264,23 @@ footer {
     line-height: 41px;
   }
 
+  .main-nav__title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: end;
+    padding-bottom: 72px;
+    padding-left: 89px;
+  }
+
   .main-nav__services {
-    margin: 0 -34px 0 0;
-    padding: 0 0 17px 0;
+    position: absolute;
+    top: 93px;
+    left: 5px;
+    margin-right: 0;
+    margin-top: 0;
   }
 
   h1 {
@@ -3194,11 +3346,6 @@ footer {
   }
 
   .seasons__conteiner h2 {
-    font-size: 49px;
-    line-height: 49px;
-  }
-
-  .seasons__conteiner h2 {
     font-size: 42px;
     line-height: 42px;
   }
@@ -3234,7 +3381,7 @@ footer {
   }
 
   .seasons__item p {
-    padding-bottom: 60px;
+    padding-bottom: 65px;
   }
 
   .seasons__item-price {
@@ -3272,19 +3419,6 @@ footer {
   }
 
   .promo__conteiner {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
     max-width: 472px;
     width: 100%;
     padding: 51px 45px;
@@ -3306,6 +3440,7 @@ footer {
   }
 
   .promo__img img {
+    height: 100%;
     width: 100%;
     max-width: 660px;
     min-width: 386px;
@@ -3323,11 +3458,11 @@ footer {
   }
 
   .coaches__hover {
-    padding: 58px 0 20px 0;
+    padding: 51px 0 20px 0;
   }
 
   .coaches__hover-list {
-    padding: 20px 20px 0 65px;
+    padding: 30px 20px 0 70px;
   }
 
   .advantages__conteiner {
@@ -3342,6 +3477,8 @@ footer {
   .advantages__list {
     -ms-grid-columns: 50% 50%;
     grid-template-columns: 50% 50%;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
     row-gap: 50px;
   }
 
@@ -3376,7 +3513,8 @@ footer {
     -ms-grid-row-span: 1;
     grid-row: 2 / 3;
     width: 442px;
-    height: 239px;
+    height: auto;
+    padding: 54px 34px;
     margin: 0 auto;
   }
 
@@ -3454,6 +3592,7 @@ footer {
   }
 
   .reviews__img {
+    padding-top: 10px;
     padding-right: 28px;
   }
 
@@ -3506,7 +3645,7 @@ footer {
     -webkit-column-gap: 30px;
     -moz-column-gap: 30px;
     column-gap: 30px;
-    row-gap: 30px;
+    row-gap: 0;
     padding-bottom: 70px;
   }
 
@@ -3575,6 +3714,7 @@ footer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    padding-left: 7px;
     padding-bottom: 0;
     margin-top: 0;
   }
@@ -3591,6 +3731,19 @@ footer {
   .footer__item-link {
     font-size: 14px;
     line-height: 16px;
+  }
+
+  .social {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: end;
+    max-width: 110px;
+    margin: 0 0 0 15px;
+  }
+
+  .social__item {
+    padding-left: 11px;
+    padding-right: 0;
   }
 }
 
@@ -3621,10 +3774,28 @@ footer {
     padding: 30px 45px 51px 45px;
   }
 
-  .main-nav__contacts a {
+  .main-nav__link {
     font-size: 26px;
     line-height: 26px;
     letter-spacing: 0.02em;
+  }
+
+  .main-nav__contacts-tel {
+    position: absolute;
+    right: 45px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    z-index: 20;
+  }
+
+  .main-nav__link-tel {
+    font-size: 26px;
+    line-height: 26px;
   }
 
   .main-nav__block {
@@ -3637,9 +3808,12 @@ footer {
   .main-nav__block img {
     width: 500px;
     height: 556px;
+    margin-top: -5px;
   }
 
   .main-nav__text {
+    padding-top: 60px;
+    padding-left: 18px;
     padding-right: 64px;
   }
 
@@ -3649,23 +3823,25 @@ footer {
   }
 
   .main-nav__title {
-    padding-bottom: 92px;
+    padding-left: 79px;
+    padding-bottom: 57px;
   }
 
   .main-nav__services {
-    margin: 0 -34px 0 0;
-    padding: 0 0 27px 0;
+    top: 135px;
+    left: 0;
   }
 
   h1 {
     width: 298px;
+    padding-top: 10px;
     font-size: 109px;
     line-height: 109px;
   }
 
   .main-nav__buy {
-    width: 238px;
-    height: 57px;
+    width: 230px;
+    height: 60px;
   }
 
   .main-nav__social {
@@ -3676,13 +3852,14 @@ footer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: start;
     padding: 120px 45px 235px 45px;
   }
 
   .hall__text {
+    text-align: start;
     max-width: 355px;
     padding: 0 85px 0 60px;
     -webkit-box-sizing: content-box;
@@ -3690,12 +3867,13 @@ footer {
   }
 
   .hall__text h2 {
+    padding-top: 50px;
     font-size: 49px;
     line-height: 49px;
   }
 
   .hall__text h3 {
-    padding: 11px 0 45px 0;
+    padding: 5px 0 40px 0;
   }
 
   .hall__text span {
@@ -3709,7 +3887,7 @@ footer {
   }
 
   .hall__video {
-    bottom: 120px;
+    top: 408px;
     left: 53%;
     -webkit-transform: translate(-50%);
     -ms-transform: translate(-50%);
@@ -3738,9 +3916,14 @@ footer {
     padding: 120px 45px 120px 45px;
   }
 
+  .seasons__conteiner h2 {
+    font-size: 49px;
+    line-height: 49px;
+  }
+
   .seasons__conteiner-buttons {
     width: 340px;
-    padding: 51px 0 0 0;
+    padding: 30px 0 0 0;
   }
 
   .seasons__conteiner-buttons::before {
@@ -3767,12 +3950,12 @@ footer {
   .seasons__item {
     width: 360px;
     height: 448px;
-    padding: 68px 77px;
+    padding: 55px 77px;
     margin-bottom: 0;
   }
 
   .seasons__item:hover {
-    padding: 61px 71px;
+    padding: 48px 71px;
   }
 
   .seasons__item h3 {
@@ -3780,13 +3963,13 @@ footer {
   }
 
   .seasons__item-shadow {
-    top: 147px;
+    top: 135px;
     font-size: 100px;
     line-height: 150px;
   }
 
   .seasons__item:hover .seasons__item-shadow {
-    top: 140px;
+    top: 128px;
   }
 
   .seasons__img img {
@@ -3795,13 +3978,13 @@ footer {
   }
 
   .promo {
-    padding: 120px 45px;
+    padding: 118px 45px;
   }
 
   .promo__conteiner {
     width: 100%;
     max-width: 500px;
-    padding: 87px 0;
+    padding: 85px 0;
   }
 
   .promo__title h2 {
@@ -3839,7 +4022,7 @@ footer {
 
   .promo__conteiner p {
     width: 343px;
-    padding-top: 30px;
+    padding-top: 24px;
     font-size: 18px;
     line-height: 27px;
   }
@@ -3847,12 +4030,12 @@ footer {
   .promo__link {
     width: 343px;
     height: 67px;
-    margin-top: 35px;
+    margin-top: 45px;
   }
 
   .promo__img img {
     min-width: 600px;
-    height: 500px;
+    height: 100%;
   }
 
   .coaches {
@@ -3862,12 +4045,16 @@ footer {
 
   .coaches h2 {
     text-align: start;
-    padding-bottom: 57px;
+    padding-bottom: 52px;
     font-size: 49px;
     line-height: 49px;
   }
 
   .coaches__item:hover .coaches__hover {
+    display: block;
+  }
+
+  .coaches__item:focus-within .coaches__hover {
     display: block;
   }
 
@@ -3883,11 +4070,11 @@ footer {
   }
 
   .advantages__conteiner {
-    padding: 120px 45px;
+    padding: 120px 45px 80px 45px;
   }
 
   .advantages h2 {
-    padding-bottom: 80px;
+    padding-bottom: 68px;
     font-size: 49px;
     line-height: 49px;
   }
@@ -3895,13 +4082,13 @@ footer {
   .advantages__list {
     -ms-grid-columns: 340px auto 340px;
     grid-template-columns: 340px auto 340px;
-    -ms-grid-rows: 71px;
-    grid-template-rows: 71px;
-    row-gap: 160px;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    row-gap: 120px;
   }
 
   .advantages__item {
-    padding-left: 10px;
+    padding-left: 15px;
   }
 
   hr {
@@ -3910,7 +4097,7 @@ footer {
 
   .advantages__item-number {
     height: 71px;
-    padding-right: 30px;
+    padding-right: 25px;
   }
 
   .advantages__item-text h4 {
@@ -3926,12 +4113,14 @@ footer {
     -ms-grid-row-span: 2;
     grid-row: 1 / 3;
     width: 240px;
-    height: 307px;
-    margin: 0 60px;
+    min-height: 307px;
+    height: auto;
+    padding: 55px 34px;
+    margin: 0 50px 40px 50px;
   }
 
   .advantages__item-main h4 {
-    padding-bottom: 25px;
+    padding-bottom: 35px;
     font-size: 26px;
     line-height: 39px;
   }
@@ -3950,7 +4139,7 @@ footer {
   }
 
   .stock h2 {
-    padding-bottom: 62px;
+    padding-bottom: 50px;
     font-size: 49px;
     line-height: 49px;
   }
@@ -3963,13 +4152,12 @@ footer {
   .stock__main {
     width: 100%;
     max-width: 280px;
-    height: 462px;
+    height: auto;
   }
 
   .stock__img img {
     width: 280px;
     min-width: 280px;
-    height: 462px;
   }
 
   .stock__block {
@@ -3989,6 +4177,7 @@ footer {
 
   .stock__discount {
     margin-right: 0;
+    margin-bottom: 40px;
   }
 
   .reviews {
@@ -3996,7 +4185,7 @@ footer {
   }
 
   .reviews h2 {
-    padding-bottom: 62px;
+    padding-bottom: 50px;
     font-size: 49px;
     line-height: 49px;
   }
@@ -4017,7 +4206,7 @@ footer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding: 70px 45px 70px 45px;
+    padding: 70px 45px 45px 45px;
   }
 
   .connection h2 {
@@ -4027,18 +4216,28 @@ footer {
 
   .connection__form {
     padding-bottom: 0;
+    padding-right: 120px;
+  }
+
+  .connection__form h2 {
+    padding-bottom: 15px;
   }
 
   .connection__btn {
     padding: 10px;
+    margin-top: 5px;
   }
 
   .connection__contacts {
     padding: 0 0 0 120px;
   }
 
+  .connection__info {
+    margin-top: 15px;
+  }
+
   .footer__conteiner {
-    padding: 41px 45px;
+    padding: 37px 45px 37px 45px;
   }
 
   .footer__conteiner-link {

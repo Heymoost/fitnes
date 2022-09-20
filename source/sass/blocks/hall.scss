@@ -7,7 +7,7 @@
 
   @media (min-width: $vp-1200) {
     display: flex;
-    align-items: center;
+    align-items: start;
     padding: 120px 45px 235px 45px;
   }
 
@@ -22,6 +22,7 @@
 
 .hall__text {
   @media (min-width: $vp-1200) {
+    text-align: start;
     max-width: 355px;
     padding: 0 85px 0 60px;
     box-sizing: content-box;
@@ -33,6 +34,7 @@
   }
 
   @media (min-width: $vp-320) {
+    text-align: start;
     padding: 0 15px 40px 15px;
   }
 }
@@ -44,6 +46,7 @@
   letter-spacing: 0.03em;
 
   @media (min-width: $vp-1200) {
+    padding-top: 50px;
     font-size: 49px;
     line-height: 49px;
   }
@@ -62,7 +65,7 @@
   line-height: 27px;
 
   @media (min-width: $vp-1200) {
-    padding: 11px 0 45px 0;
+    padding: 5px 0 40px 0;
   }
 
   @media (min-width: $vp-768) {
@@ -126,7 +129,7 @@
   border: none;
 
   @media (min-width: $vp-1200) {
-    bottom: 120px;
+    top: 408px;
     left: 53%;
     transform: translate(-50%);
     width: 364px;

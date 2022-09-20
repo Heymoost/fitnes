@@ -26,7 +26,7 @@
 
   @media (min-width: $vp-1200) {
     text-align: start;
-    padding-bottom: 57px;
+    padding-bottom: 52px;
     font-size: 49px;
     line-height: 49px;
   }
@@ -56,9 +56,16 @@
 
 .coaches__item {
   position: relative;
+  max-width: 260px;
 }
 
 .coaches__item:hover .coaches__hover {
+  @media (min-width: $vp-1200) {
+    display: block;
+  }
+}
+
+.coaches__item:focus-within .coaches__hover {
   @media (min-width: $vp-1200) {
     display: block;
   }
@@ -80,9 +87,11 @@
   @media (min-width: $vp-1200) {
     display: none;
   }
+}
 
+.coaches__item-active h3 {
   @media (min-width: $vp-320) {
-    display: block;
+    display: none;
   }
 }
 
@@ -111,7 +120,7 @@
   overflow-y: auto;
 
   @media (min-width: $vp-768) {
-    padding: 58px 0 20px 0;
+    padding: 51px 0 20px 0;
   }
 
   @media (min-width: $vp-320) {
@@ -143,11 +152,10 @@
 
 .coaches__hover-list {
   margin: 0;
-
   list-style-type: disc;
 
   @media (min-width: $vp-768) {
-    padding: 20px 20px 0 65px;
+    padding: 30px 20px 0 70px;
   }
 
   @media (min-width: $vp-320) {
@@ -163,7 +171,7 @@
 .coaches__hover-item span {
   color: #ffffff;
   font-size: 14px;
-  line-height: 21px;
+  line-height: 22px;
 }
 
 .coaches__btn-next {
@@ -175,4 +183,11 @@
   height: 16px;
   z-index: 10;
   cursor: pointer;
+}
+
+.coaches button {
+  width: 35px;
+  padding: 0;
+  border: none;
+  background: #ffffff;
 }

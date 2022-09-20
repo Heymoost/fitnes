@@ -32,7 +32,7 @@
   letter-spacing: 0.03em;
 
   @media (min-width: $vp-1200) {
-    padding-bottom: 62px;
+    padding-bottom: 50px;
     font-size: 49px;
     line-height: 49px;
   }
@@ -67,13 +67,13 @@
 }
 
 .stock__main {
-  padding: 45px;
+  padding: 35px 45px 45px 45px;
   background: #ed0233;
 
   @media (min-width: $vp-1200) {
     width: 100%;
     max-width: 280px;
-    height: 462px;
+    height: auto;
   }
 
   @media (min-width: $vp-768) {
@@ -119,7 +119,7 @@
   line-height: 25px;
 
   @media (min-width: $vp-320) {
-    padding-top: 16px;
+    padding-top: 25px;
     padding-bottom: 16px;
   }
 }
@@ -148,10 +148,11 @@
 }
 
 .stock__img img {
+  height: 100%;
+
   @media (min-width: $vp-1200) {
     width: 280px;
     min-width: 280px;
-    height: 462px;
   }
 
   @media (min-width: $vp-768) {
@@ -190,13 +191,15 @@
 .stock__discount {
   display: flex;
   flex-direction: column;
-  height: 211px;
-  padding: 28px;
+  height: auto;
+  min-height: 211px;
+  padding: 20px 28px 28px 28px;
   border: 7px solid;
   border-image: linear-gradient(145deg, #d10a42, #00359f) 1;
 
   @media (min-width: $vp-1200) {
     margin-right: 0;
+    margin-bottom: 40px;
   }
 
   @media (min-width: $vp-768) {
@@ -243,7 +246,7 @@
   color: #1c3374;
   font-style: normal;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 16px;
   align-items: center;
   letter-spacing: 0.05em;

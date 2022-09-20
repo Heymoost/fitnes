@@ -4,7 +4,7 @@
   box-sizing: content-box;
 
   @media (min-width: $vp-1200) {
-    padding: 120px 45px;
+    padding: 118px 45px;
   }
 
   @media (min-width: $vp-768) {
@@ -23,14 +23,10 @@
   @media (min-width: $vp-1200) {
     width: 100%;
     max-width: 500px;
-    padding: 87px 0;
+    padding: 85px 0;
   }
 
   @media (min-width: $vp-768) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     max-width: 472px;
     width: 100%;
     padding: 51px 45px;
@@ -39,7 +35,7 @@
   @media (min-width: $vp-320) {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+
     align-items: center;
     width: 100%;
     padding: 51px 44px;
@@ -168,7 +164,7 @@
 
   @media (min-width: $vp-1200) {
     width: 343px;
-    padding-top: 30px;
+    padding-top: 24px;
     font-size: 18px;
     line-height: 27px;
   }
@@ -196,7 +192,7 @@
   @media (min-width: $vp-1200) {
     width: 343px;
     height: 67px;
-    margin-top: 35px;
+    margin-top: 45px;
   }
 
   @media (min-width: $vp-768) {
@@ -224,10 +220,11 @@
 .promo__img img {
   @media (min-width: $vp-1200) {
     min-width: 600px;
-    height: 500px;
+    height: 100%;
   }
 
   @media (min-width: $vp-768) {
+    height: 100%;
     width: 100%;
     max-width: 660px;
     min-width: 386px;

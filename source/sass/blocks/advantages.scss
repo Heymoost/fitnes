@@ -8,7 +8,7 @@
   box-sizing: content-box;
 
   @media (min-width: $vp-1200) {
-    padding: 120px 45px;
+    padding: 120px 45px 80px 45px;
   }
 
   @media (min-width: $vp-768) {
@@ -28,7 +28,7 @@
   letter-spacing: 0.03em;
 
   @media (min-width: $vp-1200) {
-    padding-bottom: 80px;
+    padding-bottom: 68px;
     font-size: 49px;
     line-height: 49px;
   }
@@ -53,12 +53,13 @@
 
   @media (min-width: $vp-1200) {
     grid-template-columns: 340px auto 340px;
-    grid-template-rows: 71px;
-    row-gap: 160px;
+    grid-template-rows: auto;
+    row-gap: 120px;
   }
 
   @media (min-width: $vp-768) {
     grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
     row-gap: 50px;
   }
 }
@@ -66,9 +67,8 @@
 .advantages__item {
   position: relative;
 
-
   @media (min-width: $vp-1200) {
-    padding-left: 10px;
+    padding-left: 15px;
   }
 
   @media (min-width: $vp-768) {
@@ -88,7 +88,7 @@ hr {
   position: absolute;
   width: 100%;
   left: 0;
-  bottom: -84px;
+  bottom: -50px;
   border: 1px solid rgba(209, 10, 66, 0.2);
 
   @media (min-width: $vp-1200) {
@@ -103,7 +103,7 @@ hr {
 .advantages__item-number {
   @media (min-width: $vp-1200) {
     height: 71px;
-    padding-right: 30px;
+    padding-right: 25px;
   }
 
   @media (min-width: $vp-768) {
@@ -167,7 +167,6 @@ hr {
 }
 
 .advantages__item-main {
-  padding: 60px 34px;
   background: #1c3374;
   flex-shrink: 0;
 
@@ -175,20 +174,24 @@ hr {
     grid-column: 2 / 3;
     grid-row: 1 / 3;
     width: 240px;
-    height: 307px;
-    margin: 0 60px;
+    min-height: 307px;
+    height: auto;
+    padding: 55px 34px;
+    margin: 0 50px 40px 50px;
   }
 
   @media (min-width: $vp-768) {
     grid-column: 1 / 3;
     grid-row: 2 / 3;
     width: 442px;
-    height: 239px;
+    height: auto;
+    padding: 54px 34px;
     margin: 0 auto;
   }
 
   @media (min-width: $vp-320) {
     margin-bottom: 50px;
+    padding: 42px 34px;
   }
 }
 
@@ -209,7 +212,7 @@ hr {
 
 
   @media (min-width: $vp-1200) {
-    padding-bottom: 25px;
+    padding-bottom: 35px;
     font-size: 26px;
     line-height: 39px;
   }

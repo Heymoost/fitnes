@@ -6,10 +6,7 @@ document.querySelectorAll('.coaches__item').forEach(function (target) {
       document.querySelectorAll('.coaches__item').forEach(function (tab) {
         tab.classList.remove('coaches__item-active');
       });
-
       event.target.closest('.coaches__item').classList.add('coaches__item-active');
-    } else {
-      return;
     }
   });
 });

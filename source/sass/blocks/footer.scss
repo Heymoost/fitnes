@@ -8,7 +8,7 @@ footer {
   box-sizing: content-box;
 
   @media (min-width: $vp-1200) {
-    padding: 41px 45px;
+    padding: 37px 45px 37px 45px;
   }
 
   @media (min-width: $vp-768) {
@@ -25,6 +25,7 @@ footer {
 }
 
 .footer__conteiner-link {
+  margin-right: 15px;
   color: #ffffff;
   font-family: "Bebas Neue", "Arial", sans-serif;
 
@@ -57,6 +58,7 @@ footer {
 
   @media (min-width: $vp-768) {
     display: flex;
+    padding-left: 7px;
     padding-bottom: 0;
     margin-top: 0;
   }
@@ -111,29 +113,4 @@ footer {
 
 .footer__item-link:hover {
   color: #0041ca;
-}
-
-.social {
-  display: flex;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-.social__item {
-  height: 25px;
-  padding-left: 11px;
-}
-
-.social__item:first-child {
-  padding-left: 0;
-}
-
-.social__item-svg {
-  fill: #ffffff;
-}
-
-.social__item-svg:hover {
-  fill: #0041ca;
 }

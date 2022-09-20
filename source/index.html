@@ -24,8 +24,10 @@
         <div class="main-nav">
           <div class="main-nav__conteiner">
             <div class="main-nav__contacts">
-              <a href="#">Supergym</a>
-              <a href="tel:88005555555">8-800-555-55-55</a>
+              <a class="main-nav__link" href="#">Supergym</a>
+              <div class="main-nav__contacts-tel">
+                <a class="main-nav__link-tel" href="tel:88005555555">8-800-555-55-55</a>
+              </div>
             </div>
             <div class="main-nav__block">
               <div class="main-nav__text">
@@ -69,7 +71,7 @@
             <div class="hall__text">
               <h2>Тренажерный зал</h2>
               <h3>Просторный зал площадью 900 кв/м</h3>
-              <p>Supergym – самый большой фитнес центр за Уралом и идеальное место для укрепления тела и здоровья. Тренажерный зал оснащен всем необходимым современным оборудованием для всех спортсменов.
+              <p>Supergym&nbsp;&mdash; самый большой фитнес центр за&nbsp;Уралом и&nbsp;идеальное место для укрепления тела и&nbsp;здоровья. Тренажерный зал оснащен всем необходимым современным оборудованием для всех спортсменов.
               <span>В зале расположены отдельная зона для Crossfit и кардио-зона с 40 тренажерами. Также в фитнес центре есть несколько оборудованных залов для различных видов групповых занятий.</span></p>
             </div>
             <div class="hall__img">
@@ -88,8 +90,35 @@
                 </picture>
               </button>
             </div>
-            <iframe class="hall__video-player video-none" width="364" height="228" src="https://www.youtube.com/embed/9TZXsZItgdw" title="YouTube video player" frameborder="0"></iframe>
-        </div>
+            <div id="player" class="hall__video-player video-none"></div>
+
+            <!-- <script>
+              let tag = document.createElement('script');
+
+              tag.src = 'https://www.youtube.com/iframe_api';
+              let firstScriptTag = document.getElementsByTagName('script')[0];
+              firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+              let player;
+              function onYouTubeIframeAPIReady() {
+                player = new YT.Player('player', {
+                  height: '360',
+                  width: '640',
+                  videoId: '9TZXsZItgdw',
+                  events: {
+                    'onReady': onPlayerReady,
+                  }
+                });
+              }
+              function onPlayerReady(event) {
+                document.querySelector('.hall__video-btn').addEventListener('click', function () {
+                  document.querySelector('.hall__video').classList.add('video-none');
+                  document.getElementById('player').classList.remove('video-none');
+                  event.target.playVideo();
+                });
+              }
+            </script> -->
+          </div>
         <div class="seasons">
           <div class="seasons__conteiner">
             <h2>Абонементы</h2>
@@ -98,38 +127,108 @@
               <button class="seasons__conteiner-btn six" type="button">6 месяцев</button>
               <button class="seasons__conteiner-btn twelve" type="button">12 месяцев</button>
             </div>
-            <ul class="seasons__list">
-              <li class="seasons__item">
-                <h3>С тренером</h3>
-                <p>12 занятий</p>
-                <span class="seasons__item-price trainer">5000</span>
-                  <svg class="seasons__item-svg" width="30" height="42" viewBox="0 0 30 42">
-                  <use xlink:href="img/sprite_auto.svg#ruble"></use>
-                  </svg>
-                <span class="seasons__item-shadow trainer">5000</span>
-                <a class="seasons__link" href="#">купить абонемент</a>
-              </li>
-              <li class="seasons__item">
-                <h3>Дневной</h3>
-                <p>с 8:00 до 17:00</p>
-                <span class="seasons__item-price day">1700</span>
-                  <svg class="seasons__item-svg" width="30" height="42" viewBox="0 0 30 42">
-                  <use xlink:href="img/sprite_auto.svg#ruble"></use>
-                  </svg>
-                <span class="seasons__item-shadow day">1700</span>
-                <a class="seasons__link" href="#">купить абонемент</a>
-              </li>
-              <li class="seasons__item">
-                <h3>Полный день</h3>
-                <p>с 8:00 до 22:00</p>
-                <span class="seasons__item-price fullday">2700</span>
-                  <svg class="seasons__item-svg" width="30" height="42" viewBox="0 0 30 42">
-                  <use xlink:href="img/sprite_auto.svg#ruble"></use>
-                  </svg>
-                <span class="seasons__item-shadow fullday">2700</span>
-                <a class="seasons__link" href="#">купить абонемент</a>
-              </li>
-            </ul>
+            <div class="seasons__block seasons__block-one seasons__block-active seasons__block-nojs">
+              <ul class="seasons__list">
+                <li class="seasons__item">
+                  <h3>С тренером</h3>
+                  <p>12 занятий</p>
+                  <span class="seasons__item-price trainer">5000</span>
+                    <svg class="seasons__item-svg" width="30" height="42" viewBox="0 0 30 42">
+                    <use xlink:href="img/sprite_auto.svg#ruble"></use>
+                    </svg>
+                  <span class="seasons__item-shadow trainer">5000</span>
+                  <a class="seasons__link" href="#">купить абонемент</a>
+                </li>
+                <li class="seasons__item">
+                  <h3>Дневной</h3>
+                  <p>с 8:00 до 17:00</p>
+                  <span class="seasons__item-price day">1700</span>
+                    <svg class="seasons__item-svg" width="30" height="42" viewBox="0 0 30 42">
+                    <use xlink:href="img/sprite_auto.svg#ruble"></use>
+                    </svg>
+                  <span class="seasons__item-shadow day">1700</span>
+                  <a class="seasons__link" href="#">купить абонемент</a>
+                </li>
+                <li class="seasons__item">
+                  <h3>Полный день</h3>
+                  <p>с 8:00 до 22:00</p>
+                  <span class="seasons__item-price fullday">2700</span>
+                    <svg class="seasons__item-svg" width="30" height="42" viewBox="0 0 30 42">
+                    <use xlink:href="img/sprite_auto.svg#ruble"></use>
+                    </svg>
+                  <span class="seasons__item-shadow fullday">2700</span>
+                  <a class="seasons__link" href="#">купить абонемент</a>
+                </li>
+              </ul>
+            </div>
+            <div class="seasons__block seasons__block-six seasons__block-nojs">
+              <ul class="seasons__list">
+                <li class="seasons__item">
+                  <h3>С тренером</h3>
+                  <p>12 занятий</p>
+                  <span class="seasons__item-price trainer">10000</span>
+                    <svg class="seasons__item-svg" width="30" height="42" viewBox="0 0 30 42">
+                    <use xlink:href="img/sprite_auto.svg#ruble"></use>
+                    </svg>
+                  <span class="seasons__item-shadow trainer">10000</span>
+                  <a class="seasons__link" href="#">купить абонемент</a>
+                </li>
+                <li class="seasons__item">
+                  <h3>Дневной</h3>
+                  <p>с 8:00 до 17:00</p>
+                  <span class="seasons__item-price day">3000</span>
+                    <svg class="seasons__item-svg" width="30" height="42" viewBox="0 0 30 42">
+                    <use xlink:href="img/sprite_auto.svg#ruble"></use>
+                    </svg>
+                  <span class="seasons__item-shadow day">3000</span>
+                  <a class="seasons__link" href="#">купить абонемент</a>
+                </li>
+                <li class="seasons__item">
+                  <h3>Полный день</h3>
+                  <p>с 8:00 до 22:00</p>
+                  <span class="seasons__item-price fullday">5000</span>
+                    <svg class="seasons__item-svg" width="30" height="42" viewBox="0 0 30 42">
+                    <use xlink:href="img/sprite_auto.svg#ruble"></use>
+                    </svg>
+                  <span class="seasons__item-shadow fullday">5000</span>
+                  <a class="seasons__link" href="#">купить абонемент</a>
+                </li>
+              </ul>
+            </div>
+            <div class="seasons__block seasons__block-twelve seasons__block-nojs">
+              <ul class="seasons__list">
+                <li class="seasons__item">
+                  <h3>С тренером</h3>
+                  <p>12 занятий</p>
+                  <span class="seasons__item-price trainer">30000</span>
+                    <svg class="seasons__item-svg" width="30" height="42" viewBox="0 0 30 42">
+                    <use xlink:href="img/sprite_auto.svg#ruble"></use>
+                    </svg>
+                  <span class="seasons__item-shadow trainer">30000</span>
+                  <a class="seasons__link" href="#">купить абонемент</a>
+                </li>
+                <li class="seasons__item">
+                  <h3>Дневной</h3>
+                  <p>с 8:00 до 17:00</p>
+                  <span class="seasons__item-price day">9000</span>
+                    <svg class="seasons__item-svg" width="30" height="42" viewBox="0 0 30 42">
+                    <use xlink:href="img/sprite_auto.svg#ruble"></use>
+                    </svg>
+                  <span class="seasons__item-shadow day">9000</span>
+                  <a class="seasons__link" href="#">купить абонемент</a>
+                </li>
+                <li class="seasons__item">
+                  <h3>Полный день</h3>
+                  <p>с 8:00 до 22:00</p>
+                  <span class="seasons__item-price fullday">15000</span>
+                    <svg class="seasons__item-svg" width="30" height="42" viewBox="0 0 30 42">
+                    <use xlink:href="img/sprite_auto.svg#ruble"></use>
+                    </svg>
+                  <span class="seasons__item-shadow fullday">15000</span>
+                  <a class="seasons__link" href="#">купить абонемент</a>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="seasons__img">
             <picture>
@@ -347,8 +446,8 @@
               </li>
             </ul>
           </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+          <button type="button" class="swiper-button-prev"></button>
+          <button type="button" class="swiper-button-next"></button>
         </div>
       <div class="advantages">
         <div class="advantages__conteiner">
@@ -435,7 +534,7 @@
             <div class="stock__discount">
               <div class="stock__discount-text">
                 <h3>Скидка 20%</h3>
-                <p>Корпоративный фитнес  с командой</p>
+                <p>Корпоративный фитнес с командой</p>
               </div>
               <a class="stock__discount-link" href="#">подробнее</a>
             </div>
@@ -468,8 +567,8 @@
             </div>
           </div>
         </div>
-        <div class="swiper-button-prev carousel-btn-prev"></div>
-        <div class="swiper-button-next carousel-btn-next"></div>
+        <button type="button" class="carousel-btn-prev"></button>
+        <button type="button" class="carousel-btn-next"></button>
       </div>
       <div class="connection">
         <div class="connection__conteiner">
@@ -501,11 +600,15 @@
                 </li>
                 <li class="connection__item">
                   <h3>Телефон:</h3>
-                  <p>8-800-555-55-55</p>
+                  <a class="connection__item-link" href="tel:88005555555">
+                    8-800-555-55-55
+                  </a>
                 </li>
                 <li class="connection__item">
                   <h3>Email:</h3>
-                  <p>omsk@supergym.ru</p>
+                  <a class="connection__item-link" href="mailto:info@sd.ru">
+                    omsk@supergym.ru
+                  </a>
                 </li>
               </ul>
             </div>
