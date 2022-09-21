@@ -2,6 +2,10 @@ document.querySelectorAll('.seasons__block').forEach(function (tab) {
   tab.classList.remove('seasons__block-nojs');
 });
 
+document.querySelectorAll('.slider-bnt').forEach(function (tab) {
+  tab.classList.remove('btn-no-js');
+});
+
 function months(target) {
   if (target === document.querySelector('.one')) {
     document.querySelector('.seasons__block-one').classList.add('seasons__block-active');

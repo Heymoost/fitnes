@@ -38,12 +38,13 @@
   }
 
   @media (min-width: $vp-768) {
+    padding-bottom: 40px;
     font-size: 42px;
     line-height: 42px;
   }
 
   @media (min-width: $vp-320) {
-    padding-bottom: 50px;
+    padding-bottom: 42px;
     font-size: 32px;
     line-height: 32px;
   }
@@ -118,9 +119,14 @@
   font-size: 18px;
   line-height: 25px;
 
-  @media (min-width: $vp-320) {
+  @media (min-width: $vp-768) {
     padding-top: 25px;
     padding-bottom: 16px;
+  }
+
+  @media (min-width: $vp-320) {
+    padding-top: 20px;
+    padding-bottom: 23px;
   }
 }
 
@@ -203,12 +209,16 @@
   }
 
   @media (min-width: $vp-768) {
+    text-align: start;
+    align-items: stretch;
     width: 100%;
     margin-right: 30px;
     margin-bottom: 0;
   }
 
   @media (min-width: $vp-320) {
+    text-align: center;
+    align-items: center;
     width: 100%;
     margin-bottom: 30px;
   }
@@ -220,7 +230,9 @@
 }
 
 .stock__discount-text {
-  flex: 1 0 auto;
+  @media (min-width: $vp-768) {
+    flex: 1 0 auto;
+  }
 }
 
 .stock__discount h3 {
@@ -230,6 +242,14 @@
   font-weight: 700;
   font-size: 26px;
   line-height: 30px;
+
+  @media (min-width: $vp-768) {
+    padding-top: 0;
+  }
+
+  @media (min-width: $vp-320) {
+    padding-top: 14px;
+  }
 }
 
 .stock__discount p {
@@ -253,6 +273,14 @@
   text-transform: uppercase;
   text-decoration: underline;
   flex: 0 0 auto;
+
+  @media (min-width: $vp-768) {
+    margin-top: 0;
+  }
+
+  @media (min-width: $vp-320) {
+    margin-top: 25px;
+  }
 }
 
 .stock__discount-link:hover {

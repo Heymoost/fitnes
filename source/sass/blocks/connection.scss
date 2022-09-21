@@ -4,11 +4,11 @@
   }
 
   @media (min-width: $vp-768) {
-    background: linear-gradient(180deg, #102654 50%, transparent 50%);
+    background: linear-gradient(180deg, #102654 48%, transparent 48%);
   }
 
   @media (min-width: $vp-320) {
-    background: linear-gradient(180deg, #102654 50%, transparent 50%);
+    background: linear-gradient(180deg, #102654 43.5%, transparent 43.5%);
   }
 }
 
@@ -23,11 +23,11 @@
   }
 
   @media (min-width: $vp-768) {
-    padding: 70px 0 50px 133px;
+    padding: 70px 0 40px 133px;
   }
 
   @media (min-width: $vp-320) {
-    padding: 70px 15px 19px 15px;
+    padding: 70px 15px 45px 15px;
   }
 }
 
@@ -54,24 +54,29 @@
 
 .connection__form {
   width: 100%;
+  height: 100%;
 
   @media (min-width: $vp-1200) {
+    grid-template-columns: 190px 190px;
+    grid-template-rows: 90px 50px 55px;
+    column-gap: 30px;
+    row-gap: 0;
     padding-bottom: 0;
     padding-right: 120px;
   }
 
   @media (min-width: $vp-768) {
     display: grid;
-    grid-template-columns: 190px 190px;
-    column-gap: 30px;
-    row-gap: 0;
+    grid-template-columns: 206px 206px;
+    column-gap: 60px;
+    row-gap: 30px;
     padding-bottom: 70px;
   }
 
   @media (min-width: $vp-320) {
     display: grid;
     grid-template-columns: auto;
-    row-gap: 40px;
+    row-gap: 35px;
     padding-bottom: 70px;
   }
 }
@@ -80,12 +85,13 @@
   color: #ffffff;
 
   @media (min-width: $vp-1200) {
-    padding-bottom: 15px;
+    padding-bottom: 0;
   }
 
   @media (min-width: $vp-768) {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
+    padding-bottom: 5px;
   }
 }
 
@@ -127,10 +133,12 @@
   @media (min-width: $vp-768) {
     grid-column: 1 / 3;
     grid-row: 3 / 4;
+    margin-top: 0;
   }
 
   @media (min-width: $vp-320) {
     padding: 15px;
+    margin-top: 3px;
   }
 }
 
@@ -146,14 +154,25 @@
     padding: 0 0 0 120px;
   }
 
+  @media (min-width: $vp-768) {
+    padding: 70px 160px 0 0;
+  }
+
   @media (min-width: $vp-320) {
     padding: 70px 160px 0 0;
   }
 }
 
 .connection__contacts h2 {
-  padding-bottom: 25px;
   color: #102654;
+
+  @media (min-width: $vp-1200) {
+    padding-bottom: 25px;
+  }
+
+  @media (min-width: $vp-768) {
+    padding-bottom: 30px;
+  }
 }
 
 .connection__info {
@@ -161,22 +180,35 @@
 
   @media (min-width: $vp-1200) {
     margin-top: 15px;
+    column-gap: 120px;
   }
 
   @media (min-width: $vp-768) {
     flex-wrap: wrap;
     column-count: 2;
-    column-gap: 120px;
+    column-gap: 150px;
   }
 }
 
 .connection__info::before {
-  @media (min-width: $vp-768) {
+  @media (min-width: $vp-1200) {
     position: absolute;
     top: 7px;
-    right: 50%;
+    right: calc(50% - 5px);
     width: 0.1px;
     height: calc(100% - 30px);
+    background: #74819c;
+    transform: translate(50%);
+    content: "";
+    z-index: 20;
+  }
+
+  @media (min-width: $vp-768) {
+    position: absolute;
+    top: 15px;
+    right: calc(50% - 30px);
+    width: 0.1px;
+    height: calc(100% - 25px);
     background: #74819c;
     transform: translate(50%);
     content: "";
@@ -185,40 +217,95 @@
 }
 
 .connection__list {
-  width: 170px;
   padding: 0;
   margin: 0;
   list-style-type: none;
   z-index: 1;
+
+  @media (min-width: $vp-1200) {
+    width: 170px;
+    padding-top: 5px;
+  }
+
+  @media (min-width: $vp-768) {
+    width: 250px;
+    padding-top: 0;
+  }
+
+  @media (min-width: $vp-320) {
+    width: 280px;
+    padding-top: 35px;
+  }
 }
 
 .connection__item {
-  margin-bottom: 20px;
+
   break-inside: avoid;
+
+  @media (min-width: $vp-768) {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: $vp-320) {
+    margin-bottom: 17px;
+  }
 }
 
 .connection__item h3 {
   margin: 0;
   color: #102654;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
+
+
+  @media (min-width: $vp-1200) {
+    padding-bottom: 0;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $vp-768) {
+    padding-bottom: 7px;
+  }
+
+  @media (min-width: $vp-320) {
+    padding-bottom: 7px;
+    font-size: 20px;
+    line-height: 30px;
+  }
 }
 
 .connection__item p {
   margin: 0;
   color: #102654;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 21px;
+
+
+  @media (min-width: $vp-1200) {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  @media (min-width: $vp-320) {
+    font-size: 18px;
+    line-height: 27px;
+  }
 }
 
 .connection__item-link {
   margin: 0;
   color: #102654;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 21px;
+
+
+  @media (min-width: $vp-1200) {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  @media (min-width: $vp-320) {
+    font-size: 18px;
+    line-height: 27px;
+  }
 }
 
 .connection__item-link:hover {

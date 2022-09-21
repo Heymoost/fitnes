@@ -78,46 +78,22 @@
               <picture>
                 <source type="image/webp" media="(min-width: 1200px)" srcset="img/desktop/hall-desktop.webp 1x, img/desktop/hall-desktop@2x.webp 2x">
                 <source type="image/webp" media="(min-width: 768px)" srcset="img/tablet/hall-tablet.webp 1x, img/tablet/hall-tablet@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 320px)" srcset="img/mobile/hall-mobile.webp 1x, img/mobile/hall-mobile@2x.webp 2x">
                 <img src="img/mobile/hall-mobile.png" srcset="img/mobile/hall-mobile@2x.png 2x" loading="lazy" width="320" height="313" alt="Тренажерный зал.">
               </picture>
             </div>
             <div class="hall__video">
-              <button class="hall__video-btn" type="button">
-                <picture>
-                  <source type="image/webp" media="(min-width: 1200px)" srcset="img/sprite/play.svg 1x">
-                  <source type="image/webp" srcset="img/sprite/play.svg 1x">
-                  <img src="img/sprite/play.svg" width="100" height="100" alt="Кнопка Play.">
-                </picture>
-              </button>
+              <div id="player" class="hall__video-player video-none"></div>
+              <div class="hall__video-block">
+                <button class="hall__video-btn" type="button">
+                  <picture>
+                    <source type="image/webp" media="(min-width: 1200px)" srcset="img/sprite/play.svg 1x">
+                    <source type="image/webp" srcset="img/sprite/play.svg 1x">
+                    <img src="img/sprite/play.svg" width="100" height="100" alt="Кнопка Play.">
+                  </picture>
+                </button>
+              </div>
             </div>
-            <div id="player" class="hall__video-player video-none"></div>
-
-            <!-- <script>
-              let tag = document.createElement('script');
-
-              tag.src = 'https://www.youtube.com/iframe_api';
-              let firstScriptTag = document.getElementsByTagName('script')[0];
-              firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-              let player;
-              function onYouTubeIframeAPIReady() {
-                player = new YT.Player('player', {
-                  height: '360',
-                  width: '640',
-                  videoId: '9TZXsZItgdw',
-                  events: {
-                    'onReady': onPlayerReady,
-                  }
-                });
-              }
-              function onPlayerReady(event) {
-                document.querySelector('.hall__video-btn').addEventListener('click', function () {
-                  document.querySelector('.hall__video').classList.add('video-none');
-                  document.getElementById('player').classList.remove('video-none');
-                  event.target.playVideo();
-                });
-              }
-            </script> -->
           </div>
         <div class="seasons">
           <div class="seasons__conteiner">
@@ -260,6 +236,7 @@
             <picture>
               <source type="image/webp" media="(min-width: 1200px)" srcset="img/desktop/gamesman-desktop.webp 1x, img/desktop/gamesman-desktop@2x.webp 2x">
               <source type="image/webp" media="(min-width: 768px)" srcset="img/tablet/gamesman-tablet.webp 1x, img/tablet/gamesman-tablet@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 320px)" srcset="img/mobile/gamesman-mobile.webp 1x, img/mobile/gamesman-mobile@2x.webp 2x">
               <img src="img/mobile/gamesman-mobile.png" srcset="img/mobile/gamesman-mobile@2x.png 2x" loading="lazy" width="290" height="292" alt="Промо фото к предстоящим соревнованиям.">
             </picture>
           </div>
@@ -315,7 +292,7 @@
               <li class="coaches__item swiper-slide">
                 <picture>
                   <source type="image/webp" media="(min-width: 320px)" srcset="img/desktop/alex-desktop.webp 1x, img/desktop/alex-desktop@2x.webp 2x">
-                  <img src="img/desktop/alex-desktop.png" srcset="img/desktop/alex-desktop@2x.png 2x" loading="lazy" width="230" height="274" alt="Фото Александра Пашкова.">
+                  <img src="img/desktop/alex-desktop.png" srcset="img/desktop/alex-desktop@2x.png 2x" loading="lazy" width="226" height="274" alt="Фото Александра Пашкова.">
                 </picture>
                 <h3>Александр Пашков</h3>
                 <div class="coaches__hover">
@@ -403,7 +380,7 @@
               <li class="coaches__item swiper-slide">
                 <picture>
                   <source type="image/webp" media="(min-width: 320px)" srcset="img/desktop/alex-desktop.webp 1x, img/desktop/alex-desktop@2x.webp 2x">
-                  <img src="img/desktop/alex-desktop.png" srcset="img/desktop/alex-desktop@2x.png 2x" loading="lazy" width="230" height="274" alt="Фото Александра Пашкова.">
+                  <img src="img/desktop/alex-desktop.png" srcset="img/desktop/alex-desktop@2x.png 2x" loading="lazy" width="226" height="274" alt="Фото Александра Пашкова.">
                 </picture>
                 <h3>Александр Пашков</h3>
                 <div class="coaches__hover">
@@ -446,8 +423,8 @@
               </li>
             </ul>
           </div>
-          <button type="button" class="swiper-button-prev"></button>
-          <button type="button" class="swiper-button-next"></button>
+          <button type="button" class="slider-bnt swiper-button-prev btn-no-js"></button>
+          <button type="button" class="slider-bnt swiper-button-next btn-no-js"></button>
         </div>
       <div class="advantages">
         <div class="advantages__conteiner">
@@ -519,7 +496,8 @@
               <picture>
                 <source type="image/webp" media="(min-width: 1200px)" srcset="img/desktop/sportgirl-desktop.webp 1x, img/desktop/sportgirl-desktop@2x.webp 2x">
                 <source type="image/webp" media="(min-width: 768px)" srcset="img/tablet/sportgirl-tablet.webp 1x, img/tablet/sportgirl-tablet@2x.webp 2x">
-                <img src="img/mobile/sportgirl-mobile.png" srcset="img/mobile/sportgirl-mobile@2x.png 2x" loading="lazy" width="290" height="299" alt="Фото .">
+                <source type="image/webp" media="(min-width: 320px)" srcset="img/mobile/sportgirl-mobile.webp 1x, img/mobile/sportgirl-mobile@2x.webp 2x">
+                <img src="img/mobile/sportgirl-mobile.png" srcset="img/mobile/sportgirl-mobile@2x.png 2x" loading="lazy" width="290" height="299" alt="Фото посетителя фитнес-центра.">
               </picture>
             </div>
           </div>
@@ -534,7 +512,7 @@
             <div class="stock__discount">
               <div class="stock__discount-text">
                 <h3>Скидка 20%</h3>
-                <p>Корпоративный фитнес с командой</p>
+                <p>Корпоративный фитнес с&nbsp;командой</p>
               </div>
               <a class="stock__discount-link" href="#">подробнее</a>
             </div>
@@ -549,6 +527,7 @@
               <div class="reviews__img">
                 <picture>
                   <source type="image/webp" media="(min-width: 768px)" srcset="img/tablet/review-tablet.webp 1x, img/tablet/review-tablet@2x.webp 2x">
+                  <source type="image/webp" media="(min-width: 320px)" srcset="img/mobile/review-mobile.webp 1x, img/mobile/review-mobile@2x.webp 2x">
                   <img src="img/mobile/review-mobile.png" srcset="img/mobile/review-mobile@2x.png 2x" loading="lazy" width="68" height="68" alt="Аватар автора отзыва.">
                 </picture>
               </div>
@@ -559,16 +538,17 @@
               <div class="reviews__img">
                 <picture>
                   <source type="image/webp" media="(min-width: 768px)" srcset="img/tablet/review-tablet.webp 1x, img/tablet/review-tablet@2x.webp 2x">
+                  <source type="image/webp" media="(min-width: 320px)" srcset="img/mobile/review-mobile.webp 1x, img/mobile/review-mobile@2x.webp 2x">
                   <img src="img/mobile/review-mobile.png" srcset="img/mobile/review-mobile@2x.png 2x" loading="lazy" width="68" height="68" alt="Аватар автора отзыва.">
                 </picture>
               </div>
               <h3>Анна Орлова</h3>
-              <p>&laquo;Хожу в&nbsp;SuperClub уже больше года. Нравится, что в&nbsp;клубе всегда чисто, тренажеры обновляют, персонал дружелюбный. Зал просторный, даже в&nbsp;вечернее время нет очередей&raquo;</p>
+              <p>&laquo;Хожу в&nbsp;SuperClub уже больше года. Нравится, что в&nbsp;клубе всегда чисто, тренажеры обновляют, персонал дружелюбный. Зал просторный, даже в вечернее время нет очередей&raquo;</p>
             </div>
           </div>
         </div>
-        <button type="button" class="carousel-btn-prev"></button>
-        <button type="button" class="carousel-btn-next"></button>
+        <button type="button" class="slider-bnt carousel-btn-prev btn-no-js"></button>
+        <button type="button" class="slider-bnt carousel-btn-next btn-no-js"></button>
       </div>
       <div class="connection">
         <div class="connection__conteiner">
@@ -617,23 +597,23 @@
       </div>
       </main>
       <footer>
-        <div class="footer__conteiner">
-          <a class="footer__conteiner-link" href="#">Supergym</a>
+        <div class="footer">
+          <a class="footer__link" href="#">Supergym</a>
           <ul class="footer__list">
-            <li class="footer__item">
-              <a class="footer__item-link" href="#">Услуги</a>
+            <li class="footer__list-item">
+              <a class="footer__list-link" href="#">Услуги</a>
             </li>
-            <li class="footer__item">
-              <a class="footer__item-link" href="#">Абонементы</a>
+            <li class="footer__list-item">
+              <a class="footer__list-link" href="#">Абонементы</a>
             </li>
-            <li class="footer__item">
-              <a class="footer__item-link" href="#">Акции</a>
+            <li class="footer__list-item">
+              <a class="footer__list-link" href="#">Акции</a>
             </li>
-            <li class="footer__item">
-              <a class="footer__item-link" href="#">Тренеры</a>
+            <li class="footer__list-item">
+              <a class="footer__list-link" href="#">Тренеры</a>
             </li>
-            <li class="footer__item">
-              <a class="footer__item-link" href="#">Расписание</a>
+            <li class="footer__list-item">
+              <a class="footer__list-link" href="#">Расписание</a>
             </li>
           </ul>
           <ul class="social">

@@ -1,6 +1,6 @@
 import Swiper, {Navigation} from 'swiper';
 
-const swiper = new Swiper('.swiper', {
+export const swiper = new Swiper('.swiper', {
   modules: [Navigation],
   slidesPerGroup: 1,
   loop: true,
@@ -17,12 +17,9 @@ const swiper = new Swiper('.swiper', {
     },
     1200: {
       slidesPerView: 4,
-      spaceBetween: 20,
+      spaceBetween: 40,
     },
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 30,
-    },
+
     768: {
       slidesPerView: 2,
       spaceBetween: 30,
@@ -30,7 +27,7 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
-const carousel = new Swiper('.carousel', {
+export const carousel = new Swiper('.carousel', {
   modules: [Navigation],
   setWrapperSize: true,
   slidesPerGroup: 1,

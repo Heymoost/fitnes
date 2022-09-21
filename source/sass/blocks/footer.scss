@@ -2,7 +2,7 @@ footer {
   background: #030a1a;
 }
 
-.footer__conteiner {
+.footer {
   max-width: 1160px;
   margin: 0 auto;
   box-sizing: content-box;
@@ -15,7 +15,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 44px 45px;
+    padding: 35px 40px 35px 45px;
   }
 
   @media (min-width: $vp-320) {
@@ -24,7 +24,7 @@ footer {
   }
 }
 
-.footer__conteiner-link {
+.footer__link {
   margin-right: 15px;
   color: #ffffff;
   font-family: "Bebas Neue", "Arial", sans-serif;
@@ -47,7 +47,7 @@ footer {
   }
 }
 
-.footer__conteiner-link:hover {
+.footer__link:hover {
   color: #0041ca;
 }
 
@@ -56,9 +56,13 @@ footer {
   margin: 0;
   list-style-type: none;
 
+  @media (min-width: $vp-1200) {
+    padding-left: 7px;
+  }
+
   @media (min-width: $vp-768) {
     display: flex;
-    padding-left: 7px;
+    padding-left: 10px;
     padding-bottom: 0;
     margin-top: 0;
   }
@@ -66,38 +70,43 @@ footer {
   @media (min-width: $vp-320) {
     display: block;
     flex-wrap: wrap;
-    padding-bottom: 20px;
+    padding-bottom: 18px;
     margin-top: -25px;
     column-count: 2;
   }
 }
 
-.footer__item {
-  @media (min-width: $vp-768) {
+.footer__list-item {
+  @media (min-width: $vp-1200) {
     padding-right: 40px;
     padding-bottom: 0;
   }
 
+  @media (min-width: $vp-768) {
+    padding-right: 30px;
+    padding-bottom: 0;
+  }
+
   @media (min-width: $vp-320) {
-    padding-bottom: 20px;
+    padding-bottom: 15px;
   }
 }
 
-.footer__item:last-child {
+.footer__list-item:last-child {
   padding-right: 0;
 }
 
-.footer__item:first-child {
+.footer__list-item:first-child {
   @media (min-width: $vp-768) {
     padding-top: 0;
   }
 
   @media (min-width: $vp-320) {
-    padding-top: 45px;
+    padding-top: 40px;
   }
 }
 
-.footer__item-link {
+.footer__list-link {
   color: #ffffff;
 
   @media (min-width: $vp-768) {
@@ -111,6 +120,6 @@ footer {
   }
 }
 
-.footer__item-link:hover {
+.footer__list-link:hover {
   color: #0041ca;
 }
