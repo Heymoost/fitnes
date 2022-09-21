@@ -681,12 +681,22 @@ template {
   transform: rotate(-135deg);
 }
 
+.swiper-button-prev:hover.swiper-button-prev:after {
+  border-top: 1px solid #3300ff;
+  border-right: 1px solid #3300ff;
+}
+
 .carousel-btn-prev:after {
   border-top: 1px solid #afafaf;
   border-right: 1px solid #afafaf;
   -webkit-transform: rotate(-135deg);
   -ms-transform: rotate(-135deg);
   transform: rotate(-135deg);
+}
+
+.carousel-btn-prev:hover.carousel-btn-prev:after {
+  border-top: 1px solid #3300ff;
+  border-right: 1px solid #3300ff;
 }
 
 .swiper-button-next:after {
@@ -697,12 +707,22 @@ template {
   transform: rotate(45deg);
 }
 
+.swiper-button-next:hover.swiper-button-next:after {
+  border-top: 1px solid #3300ff;
+  border-right: 1px solid #3300ff;
+}
+
 .carousel-btn-next:after {
   border-top: 1px solid #afafaf;
   border-right: 1px solid #afafaf;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.carousel-btn-next:hover.carousel-btn-next:after {
+  border-top: 1px solid #3300ff;
+  border-right: 1px solid #3300ff;
 }
 
 .swiper-button-prev:after,
@@ -1584,6 +1604,7 @@ h1 {
   -ms-flex-pack: center;
   justify-content: center;
   width: 100%;
+  height: 100%;
   color: #ffffff;
   font-weight: 700;
   font-size: 12px;
