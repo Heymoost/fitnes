@@ -9,7 +9,7 @@
   box-sizing: content-box;
 
   @media (min-width: $vp-1200) {
-    padding: 120px 45px 120px 45px;
+    padding: 120px 45px 100px 45px;
   }
 
   @media (min-width: $vp-768) {
@@ -137,13 +137,13 @@
 
 .seasons__list {
   position: relative;
-
   margin: 0;
   list-style-type: none;
   z-index: 2;
 
   @media (min-width: $vp-1200) {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 
@@ -165,7 +165,7 @@
     width: 360px;
     height: 448px;
     padding: 55px 77px;
-    margin-bottom: 0;
+    margin-bottom: 20px;
   }
 
   @media (min-width: $vp-768) {
@@ -186,6 +186,23 @@
 }
 
 .seasons__item:hover {
+  border: 7px solid;
+  border-image: linear-gradient(120deg, #d10a42, #00359f) 1;
+
+  @media (min-width: $vp-1200) {
+    padding: 48px 71px;
+  }
+
+  @media (min-width: $vp-768) {
+    padding: 61px 111px;
+  }
+
+  @media (min-width: $vp-320) {
+    padding: 48px 35px;
+  }
+}
+
+.seasons__item:focus-within {
   border: 7px solid;
   border-image: linear-gradient(120deg, #d10a42, #00359f) 1;
 

@@ -3,7 +3,7 @@ document.querySelectorAll('.seasons__block').forEach(function (tab) {
 });
 
 document.querySelectorAll('.slider-bnt').forEach(function (tab) {
-  tab.classList.remove('btn-no-js');
+  tab.classList.remove('no-js');
 });
 
 function months(target) {

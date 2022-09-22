@@ -1,4 +1,6 @@
 /* eslint-disable no-undef */
+document.querySelector('.hall__video-link').classList.add('no-js');
+
 document.addEventListener('DOMContentLoaded', function () {
   let tag = document.createElement('script');
 

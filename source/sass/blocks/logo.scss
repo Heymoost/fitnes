@@ -1,0 +1,19 @@
+.logo img {
+  box-sizing: content-box;
+  margin: 0;
+
+  @media (min-width: $vp-1200) {
+    width: 89px;
+    height: 20px;
+  }
+
+  @media (min-width: $vp-768) {
+    width: 82px;
+    height: 17px;
+  }
+
+  @media (min-width: $vp-320) {
+    width: 68px;
+    height: 15px;
+  }
+}

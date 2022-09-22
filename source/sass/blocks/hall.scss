@@ -133,6 +133,10 @@
   background-repeat: no-repeat;
   border: none;
 
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/desktop/player-desktop@2x.png");
+  }
+
   @media (min-width: $vp-1200) {
     top: 408px;
     left: 53%;
@@ -193,6 +197,25 @@
     width: 73px;
     height: 73px;
     top: 47px;
+  }
+}
+
+.hall__video-link {
+  position: absolute;
+  content: "";
+
+  @media (min-width: $vp-1200) {
+    width: 100px;
+    height: 100px;
+    top: 0;
+    left: 0;
+  }
+
+  @media (min-width: $vp-320) {
+    width: 73px;
+    height: 73px;
+    top: 0;
+    left: 0;
   }
 }
 

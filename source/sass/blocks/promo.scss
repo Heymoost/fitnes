@@ -70,6 +70,7 @@
 
 .promo__event {
   display: inline-block;
+  vertical-align: auto;
 
   @media (min-width: $vp-1200) {
     max-height: 160px;

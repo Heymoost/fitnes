@@ -12,7 +12,7 @@
   }
 
   @media (min-width: $vp-768) {
-    padding: 100px 49px 95px 48px;
+    padding: 100px 49px 92px 48px;
   }
 
   @media (min-width: $vp-320) {
@@ -81,7 +81,7 @@
   @media (min-width: $vp-320) {
     display: block;
     text-align: center;
-    padding: 0 46px 47px 46px;
+    padding: 0 46px 43px 46px;
   }
 }
 
@@ -117,11 +117,14 @@ hr {
   }
 }
 
-.advantages__item h3 {
+.advantages__item-amount {
+  display: flex;
+  flex-wrap: wrap;
   margin: 0;
   font-weight: 700;
 
   @media (min-width: $vp-1200) {
+    width: auto;
     background: linear-gradient(142.51deg, #d10a42 0%, #0041ca 87.33%);
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -130,6 +133,9 @@ hr {
   }
 
   @media (min-width: $vp-768) {
+    justify-content: start;
+    margin: 0;
+    width: 89px;
     background: linear-gradient(142.51deg, #d10a42 0%, #0041ca 87.33%);
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -138,6 +144,9 @@ hr {
   }
 
   @media (min-width: $vp-320) {
+    justify-content: center;
+    margin: 0 auto;
+    width: 85px;
     background: linear-gradient(127.61deg, #d10a42 35%, #0041ca 60%);
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -146,14 +155,36 @@ hr {
   }
 }
 
+.item-amount {
+  box-sizing: content-box;
+
+  @media (min-width: $vp-1200) {
+    width: auto;
+    padding-right: 0;
+  }
+
+  @media (min-width: $vp-768) {
+    width: 59px;
+    padding-right: 3px;
+  }
+
+  @media (min-width: $vp-320) {
+    width: 59px;
+  }
+}
+
 .advantages__item span {
   color: #2e35ac;
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
+
+  @media (min-width: $vp-1200) {
+    padding-top: 5px;
+  }
 }
 
-.advantages__item-text h4 {
+.advantages__item-text h3 {
   margin: 0;
   color: #102654;
   font-weight: 700;
@@ -166,7 +197,7 @@ hr {
 
   @media (min-width: $vp-768) {
     font-size: 20px;
-    padding-bottom: 7px;
+    padding-bottom: 5px;
     padding-top: 0;
   }
 
@@ -183,7 +214,7 @@ hr {
   color: #102654;
   font-weight: 300;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 22px;
 
   @media (min-width: $vp-1200) {
     padding-right: 0;
@@ -224,15 +255,9 @@ hr {
 }
 
 .advantages__item-main h3 {
-  margin: 0;
-  text-align: center;
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 74px;
-  line-height: 74px;
-}
-
-.advantages__item-main h4 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 0;
   text-align: center;
   color: #ffffff;
@@ -256,6 +281,14 @@ hr {
     font-size: 22px;
     line-height: 33px;
   }
+}
+
+.advantages__item-main span {
+  margin: 0;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 74px;
+  line-height: 74px;
 }
 
 .advantages__item-main p {

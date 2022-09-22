@@ -8,7 +8,7 @@
   }
 
   @media (min-width: $vp-768) {
-    padding: 100px 45px;
+    padding: 100px 45px 70px 45px;
   }
 
   @media (min-width: $vp-320) {
@@ -20,6 +20,7 @@
   @media (min-width: $vp-1200) {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
   }
 }
 
@@ -185,7 +186,12 @@
   }
 
   @media (min-width: $vp-768) {
+    // display: grid;
+    // grid-template-columns: 48.5% auto;
+    // column-gap: 30px;
+    // row-gap: 30px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 
@@ -204,29 +210,39 @@
   border-image: linear-gradient(145deg, #d10a42, #00359f) 1;
 
   @media (min-width: $vp-1200) {
+    width: 100%;
     margin-right: 0;
     margin-bottom: 40px;
   }
 
   @media (min-width: $vp-768) {
+    width: 48%;
     text-align: start;
     align-items: stretch;
-    width: 100%;
-    margin-right: 30px;
-    margin-bottom: 0;
+    margin-bottom: 30px;
   }
 
   @media (min-width: $vp-320) {
     text-align: center;
     align-items: center;
-    width: 100%;
     margin-bottom: 30px;
   }
 }
 
 .stock__discount:last-child {
   margin-right: 0;
-  margin-bottom: 0;
+
+  @media (min-width: $vp-1200) {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $vp-768) {
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: $vp-320) {
+    margin-bottom: 0;
+  }
 }
 
 .stock__discount-text {
