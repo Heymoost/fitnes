@@ -179,11 +179,8 @@
   */
 }
 .swiper-button-prev,
-.swiper-button-next,
-.carousel-btn-next,
-.carousel-btn-prev {
+.swiper-button-next {
   position: absolute;
-
   width: calc(var(--swiper-navigation-size) / 44 * 27);
   height: var(--swiper-navigation-size);
   margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
@@ -196,6 +193,27 @@
 
   @media (min-width: 768px) {
     top: calc(50% - 5px);
+  }
+
+  @media (min-width: 320px) {
+    top: calc(50% + 3px);
+  }
+}
+.carousel-btn-next,
+.carousel-btn-prev {
+  position: absolute;
+  width: calc(var(--swiper-navigation-size) / 44 * 27);
+  height: var(--swiper-navigation-size);
+  margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #afafaf;
+
+  @media (min-width: 768px) {
+    top: 215px;
   }
 
   @media (min-width: 320px) {

@@ -4,7 +4,6 @@ export const swiper = new Swiper('.swiper', {
   modules: [Navigation],
   slidesPerGroup: 1,
   loop: true,
-  loopFillGroupWithBlank: true,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -34,25 +33,23 @@ export const swiper = new Swiper('.swiper', {
 
 export const carousel = new Swiper('.carousel', {
   modules: [Navigation],
-  setWrapperSize: true,
   slidesPerGroup: 1,
   slidesPerView: 1,
-  loop: true,
-  loopFillGroupWithBlank: true,
   navigation: {
     nextEl: '.carousel-btn-next',
     prevEl: '.carousel-btn-prev',
   },
+  breakpoints: {
+    1200: {
+      allowTouchMove: false,
+    },
 
-  1200: {
-    allowTouchMove: false,
-  },
+    768: {
+      allowTouchMove: true,
+    },
 
-  768: {
-    allowTouchMove: true,
-  },
-
-  320: {
-    allowTouchMove: true,
+    320: {
+      allowTouchMove: true,
+    },
   },
 });
