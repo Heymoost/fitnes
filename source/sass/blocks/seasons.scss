@@ -276,7 +276,9 @@
 }
 
 .seasons__item-svg {
+  position: relative;
   box-sizing: content-box;
+  z-index: 2;
 
   @media (min-width: $vp-768) {
     padding-left: 14px;

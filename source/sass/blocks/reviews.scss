@@ -44,15 +44,12 @@
 }
 
 .reviews__conteiner {
-  max-height: 242px;
   margin: 0 auto;
   background: #1c3374;
-  box-shadow: 0 0 40px rgba(28, 51, 116, 0.2);
-  overflow-y: auto;
 
   @media (min-width: $vp-1200) {
     width: 100%;
-    max-width: 560px;
+    max-width: 566px;
     padding: 53px 62px;
   }
 
@@ -62,6 +59,7 @@
     grid-template-rows: 40px auto;
     width: 100%;
     max-width: 566px;
+    min-height: 242px;
     padding: 53px 62px;
   }
 
@@ -70,6 +68,7 @@
     grid-template-columns: 50% 50%;
     width: 100%;
     max-width: 566px;
+    min-height: 335px;
     padding: 40px 22px 36px 22px;
   }
 }

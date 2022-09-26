@@ -142,7 +142,7 @@
   box-sizing: border-box;
   overflow-y: auto;
 
-  @media (min-width: $vp-768) {
+  @media (min-width: $vp-1200) {
     padding: 51px 0 20px 0;
   }
 
@@ -181,7 +181,7 @@
   margin: 0;
   list-style-type: disc;
 
-  @media (min-width: $vp-768) {
+  @media (min-width: $vp-1200) {
     padding: 30px 20px 0 70px;
   }
 
@@ -197,12 +197,13 @@
 .coaches__hover-item {
   color: #ffffff;
   padding-bottom: 10px;
+  line-height: 22px;
 }
 
 .coaches__hover-item span {
   color: #ffffff;
   font-size: 14px;
-  line-height: 22px;
+  line-height: 16px;
 }
 
 .coaches__btn-next {

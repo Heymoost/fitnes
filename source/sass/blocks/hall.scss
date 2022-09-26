@@ -128,13 +128,13 @@
 
 .hall__video-block {
   position: absolute;
-  background-image: url("../img/desktop/player-desktop.png");
+  background-image: url("../img/desktop/player-desktop.webp");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   border: none;
 
   @media (min-resolution: 2dppx) {
-    background-image: url("../img/desktop/player-desktop@2x.png");
+    background-image: url("../img/desktop/player-desktop@2x.webp");
   }
 
   @media (min-width: $vp-1200) {
@@ -159,10 +159,10 @@
     left: 50%;
     transform: translate(-50%);
     bottom: 70px;
-    width: calc(100% - 502px);
-    max-width: 450px;
-    height: calc(100% - 687px);
-    max-height: 250px;
+    width: 100%;
+    max-width: 400px;
+    height: calc(100% - 759px);
+    max-height: 207px;
   }
 }
 
@@ -200,7 +200,7 @@
   @media (min-width: $vp-320) {
     width: 73px;
     height: 73px;
-    top: 50%;
+    bottom: 30%;
   }
 }
 

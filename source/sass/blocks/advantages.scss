@@ -120,11 +120,35 @@ hr {
 .advantages__item-amount {
   display: flex;
   flex-wrap: wrap;
+  color: #2e35ac;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+
+  @media (min-width: $vp-1200) {
+    width: auto;
+  }
+
+  @media (min-width: $vp-768) {
+    justify-content: start;
+    margin: 0;
+    width: 89px;
+  }
+
+  @media (min-width: $vp-320) {
+    justify-content: center;
+    margin: 0 auto;
+    width: 85px;
+  }
+}
+
+.advantages__item-clip {
   margin: 0;
   font-weight: 700;
 
   @media (min-width: $vp-1200) {
     width: auto;
+    padding-bottom: 5px;
     background: linear-gradient(142.51deg, #d10a42 0%, #0041ca 87.33%);
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -133,9 +157,6 @@ hr {
   }
 
   @media (min-width: $vp-768) {
-    justify-content: start;
-    margin: 0;
-    width: 89px;
     background: linear-gradient(142.51deg, #d10a42 0%, #0041ca 87.33%);
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -144,9 +165,6 @@ hr {
   }
 
   @media (min-width: $vp-320) {
-    justify-content: center;
-    margin: 0 auto;
-    width: 85px;
     background: linear-gradient(127.61deg, #d10a42 35%, #0041ca 60%);
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -173,22 +191,10 @@ hr {
   }
 }
 
-.advantages__item span {
-  color: #2e35ac;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 21px;
-
-  @media (min-width: $vp-1200) {
-    padding-top: 5px;
-  }
-}
-
 .advantages__item-text h3 {
   margin: 0;
   color: #102654;
   font-weight: 700;
-
 
   @media (min-width: $vp-1200) {
     padding-bottom: 10px;
@@ -200,7 +206,6 @@ hr {
     padding-bottom: 5px;
     padding-top: 0;
   }
-
 
   @media (min-width: $vp-320) {
     font-size: 20px;
@@ -263,7 +268,6 @@ hr {
   text-align: center;
   color: #ffffff;
   font-weight: 700;
-
 
   @media (min-width: $vp-1200) {
     padding-bottom: 35px;

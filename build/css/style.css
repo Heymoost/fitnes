@@ -420,6 +420,17 @@ template {
   z-index: 1;
 }
 
+.carousel {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  /* Fix of Webkit flickering */
+  z-index: 1;
+}
+
 .swiper-vertical > .swiper-wrapper {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -1702,7 +1713,7 @@ h1 {
 
 .hall__video-block {
   position: absolute;
-  background-image: url("../img/desktop/player-desktop.png");
+  background-image: url("../img/desktop/player-desktop.webp");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   border: none;
@@ -1851,8 +1862,10 @@ h1 {
 }
 
 .seasons__item-svg {
+  position: relative;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
+  z-index: 2;
 }
 
 .seasons__item-shadow {
@@ -2076,12 +2089,13 @@ h1 {
 .coaches__hover-item {
   color: #ffffff;
   padding-bottom: 10px;
+  line-height: 22px;
 }
 
 .coaches__hover-item span {
   color: #ffffff;
   font-size: 14px;
-  line-height: 22px;
+  line-height: 16px;
 }
 
 .coaches__btn-next {
@@ -2149,6 +2163,13 @@ hr {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  color: #2e35ac;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.advantages__item-clip {
   margin: 0;
   font-weight: 700;
 }
@@ -2156,13 +2177,6 @@ hr {
 .item-amount {
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
-}
-
-.advantages__item span {
-  color: #2e35ac;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 21px;
 }
 
 .advantages__item-text h3 {
@@ -2385,12 +2399,8 @@ hr {
 }
 
 .reviews__conteiner {
-  max-height: 242px;
   margin: 0 auto;
   background: #1c3374;
-  -webkit-box-shadow: 0 0 40px rgba(28, 51, 116, 0.2);
-  box-shadow: 0 0 40px rgba(28, 51, 116, 0.2);
-  overflow-y: auto;
 }
 
 .reviews__img {
@@ -2627,7 +2637,7 @@ footer {
 
   .carousel-btn-next,
   .carousel-btn-prev {
-    top: calc(50% + 3px);
+    top: 240px;
   }
 
   .swiper-button-prev:after {
@@ -2783,16 +2793,16 @@ footer {
     -ms-transform: translate(-50%);
     transform: translate(-50%);
     bottom: 70px;
-    width: calc(100% - 502px);
-    max-width: 450px;
-    height: calc(100% - 687px);
-    max-height: 250px;
+    width: 100%;
+    max-width: 400px;
+    height: calc(100% - 759px);
+    max-height: 207px;
   }
 
   .hall__video-btn {
     width: 73px;
     height: 73px;
-    top: 50%;
+    bottom: 30%;
   }
 
   .hall__video-link {
@@ -3040,6 +3050,9 @@ footer {
     justify-content: center;
     margin: 0 auto;
     width: 85px;
+  }
+
+  .advantages__item-clip {
     background: -o-linear-gradient(322.39deg, #d10a42 35%, #0041ca 60%);
     background: linear-gradient(127.61deg, #d10a42 35%, #0041ca 60%);
     -webkit-text-fill-color: transparent;
@@ -3141,6 +3154,7 @@ footer {
     grid-template-columns: 50% 50%;
     width: 100%;
     max-width: 566px;
+    min-height: 335px;
     padding: 40px 22px 36px 22px;
   }
 
@@ -3287,7 +3301,7 @@ footer {
 
   .carousel-btn-next,
   .carousel-btn-prev {
-    top: 215px;
+    top: 202px;
   }
 
   .swiper-button-prev:after {
@@ -3607,15 +3621,7 @@ footer {
   }
 
   .coaches__hover {
-    padding: 51px 0 20px 0;
-  }
-
-  .coaches__hover {
     padding: 48px 0 10px 0;
-  }
-
-  .coaches__hover-list {
-    padding: 30px 20px 0 70px;
   }
 
   .coaches__hover-list {
@@ -3659,6 +3665,9 @@ footer {
     justify-content: start;
     margin: 0;
     width: 89px;
+  }
+
+  .advantages__item-clip {
     background: -o-linear-gradient(307.49deg, #d10a42 0%, #0041ca 87.33%);
     background: linear-gradient(142.51deg, #d10a42 0%, #0041ca 87.33%);
     -webkit-text-fill-color: transparent;
@@ -3805,6 +3814,7 @@ footer {
     grid-template-rows: 40px auto;
     width: 100%;
     max-width: 566px;
+    min-height: 242px;
     padding: 53px 62px;
   }
 
@@ -3998,6 +4008,11 @@ footer {
 }
 
 @media (min-width: 1200px) {
+  .carousel-btn-next,
+  .carousel-btn-prev {
+    top: 220px;
+  }
+
   .swiper-button-prev,
   .swiper-rtl .swiper-button-next {
     left: 10px;
@@ -4031,16 +4046,9 @@ footer {
   }
 
   .main-nav__contacts-tel {
-    position: absolute;
-    right: 45px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    z-index: 20;
   }
 
   .main-nav__link-tel {
@@ -4058,10 +4066,11 @@ footer {
   .main-nav__block img {
     width: 500px;
     height: 556px;
+    margin-top: -5px;
   }
 
   .main-nav__text {
-    padding-top: 70px;
+    padding-top: 60px;
     padding-left: 18px;
     padding-right: 64px;
   }
@@ -4073,7 +4082,7 @@ footer {
 
   .main-nav__title {
     padding-left: 79px;
-    padding-bottom: 55px;
+    padding-bottom: 50px;
   }
 
   .main-nav__services {
@@ -4091,7 +4100,7 @@ footer {
   .main-nav__buy {
     width: 230px;
     height: 60px;
-    margin-top: 0;
+    margin-top: 5px;
   }
 
   .main-nav__social {
@@ -4340,6 +4349,14 @@ footer {
     box-sizing: content-box;
   }
 
+  .coaches__hover {
+    padding: 51px 0 20px 0;
+  }
+
+  .coaches__hover-list {
+    padding: 30px 20px 0 70px;
+  }
+
   .advantages__conteiner {
     padding: 120px 45px 80px 45px;
   }
@@ -4373,6 +4390,11 @@ footer {
 
   .advantages__item-amount {
     width: auto;
+  }
+
+  .advantages__item-clip {
+    width: auto;
+    padding-bottom: 5px;
     background: -o-linear-gradient(307.49deg, #d10a42 0%, #0041ca 87.33%);
     background: linear-gradient(142.51deg, #d10a42 0%, #0041ca 87.33%);
     -webkit-text-fill-color: transparent;
@@ -4385,10 +4407,6 @@ footer {
   .item-amount {
     width: auto;
     padding-right: 0;
-  }
-
-  .advantages__item span {
-    padding-top: 5px;
   }
 
   .advantages__item-text h3 {
@@ -4499,7 +4517,7 @@ footer {
 
   .reviews__conteiner {
     width: 100%;
-    max-width: 560px;
+    max-width: 566px;
     padding: 53px 62px;
   }
 
@@ -4645,6 +4663,6 @@ footer {
 
 @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 2dppx) {
   .hall__video-block {
-    background-image: url("../img/desktop/player-desktop@2x.png");
+    background-image: url("../img/desktop/player-desktop@2x.webp");
   }
 }
